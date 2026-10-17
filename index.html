@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="VYLEX - Master Engineering. The Future is Yours.">
+    <title>VYLEX | Engineering Learning Platform</title>
+    <!-- Links will be activated by the user in their environment -->
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <!-- Main Application Container -->
+    <div class="app-container" id="app-root">
+
+        <!-- ================= SIDEBAR NAVIGATION ================= -->
+        <aside class="sidebar" id="main-sidebar" aria-label="Main Navigation">
+            <div class="sidebar-header">
+                <a href="#" class="brand-logo" aria-label="VYLEX Home">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                        <path d="M4 4L12 20L20 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </a>
+            </div>
+
+            <nav class="sidebar-nav">
+                <ul role="list">
+                    <li>
+                        <a href="#home" class="nav-link active" data-target="view-home" aria-current="page">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                            <span class="nav-label">Home</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#share" class="nav-link" data-target="view-share">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+                            <span class="nav-label">Share</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#lab" class="nav-link" data-target="view-lab">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path d="M10 2v7.31l-4.85 8.13A1.25 1.25 0 0 0 6.22 19h11.56a1.25 1.25 0 0 0 1.07-1.56L14 9.31V2"/><line x1="8" y1="2" x2="16" y2="2"/></svg>
+                            <span class="nav-label">Lab</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#viva" class="nav-link" data-target="view-viva">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                            <span class="nav-label">Viva</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#revision" class="nav-link" data-target="view-revision">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+                            <span class="nav-label">Revision</span>
+                        </a>
+                    </li>
+                    <li>
+                        <button type="button" class="nav-link btn-search-toggle" id="sidebar-search-btn" aria-label="Open Search">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                            <span class="nav-label">Search</span>
+                        </button>
+                    </li>
+                </ul>
+            </nav>
+
+            <div class="sidebar-footer">
+                <button type="button" class="nav-link logout-btn" aria-label="Log out">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+                </button>
+            </div>
+        </aside>
+
+        <!-- ================= MAIN CONTENT AREA ================= -->
+        <main class="main-content" id="main-content-area">
+
+            <!-- TOP HEADER -->
+            <header class="top-header">
+                <h1 class="header-title">VYLEX.</h1>
+                <div class="header-actions">
+                    <button type="button" class="icon-btn notification-btn" aria-label="Notifications">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+                        <span class="notification-badge"></span>
+                    </button>
+                    <button type="button" class="icon-btn profile-btn" aria-label="User Profile">
+                        <div class="avatar-placeholder"></div>
+                    </button>
+                </div>
+            </header>
+
+            <!-- VIEW: HOME / DASHBOARD -->
+            <section id="view-home" class="view active" aria-labelledby="home-heading">
+                <div class="hero-section">
+                    <div class="hero-text">
+                        <h2 id="home-heading" class="hero-title">
+                            VYLEX.<br>
+                            Master Engineering.<br>
+                            The Future is Yours.
+                        </h2>
+                    </div>
+                    
+                    <div class="dashboard-grid">
+                        <!-- Personalized Dashboard Card -->
+                        <article class="glass-card dashboard-card">
+                            <header class="card-header">
+                                <h3 class="card-title">Personalized Dashboard</h3>
+                                <button type="button" class="icon-btn kebab-menu" aria-label="Dashboard options">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/><circle cx="5" cy="12" r="1"/></svg>
+                                </button>
+                            </header>
+                            
+                            <div class="dashboard-content">
+                                <!-- Circular Progress -->
+                                <div class="circular-progress-container">
+                                    <svg class="circular-progress" viewBox="0 0 36 36">
+                                        <path class="circle-bg" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                                        <path class="circle-stroke" stroke-dasharray="60, 100" d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831" />
+                                    </svg>
+                                    <span class="progress-value">60%</span>
+                                </div>
+
+                                <div class="progress-details">
+                                    <!-- Learning Path Progress -->
+                                    <div class="progress-item">
+                                        <span class="progress-label">Learning Path:</span>
+                                        <h4 class="progress-title">Data Structures & Algorithms</h4>
+                                        <div class="progress-track" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" aria-label="Learning Path Progress">
+                                            <div class="progress-fill" data-progress="75"></div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Revision Progress -->
+                                    <div class="progress-item">
+                                        <span class="progress-label">Revision</span>
+                                        <h4 class="progress-title">Advanced Pointer Arithmetic</h4>
+                                        <div class="progress-track" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" aria-label="Revision Progress">
+                                            <div class="progress-fill" data-progress="40"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+
+                        <!-- Floating Subject Cards Container -->
+                        <div class="floating-subjects-container" aria-label="Quick Subject Access">
+                            <button class="subject-float-card cpp-card" data-subject-id="cpp">
+                                <div class="card-icon">C++</div>
+                                <span class="card-text">C/C++<br>Fundamentals</span>
+                            </button>
+                            
+                            <button class="subject-float-card verilog-card" data-subject-id="verilog">
+                                <div class="card-icon"></div>
+                                <span class="card-text">Digital Logic &<br>Verilog</span>
+                            </button>
+
+                            <button class="subject-float-card digital-logic-card" data-subject-id="digital-logic">
+                                <div class="card-icon"></div>
+                                <span class="card-text">Digital Logic<br>& Verilog</span>
+                            </button>
+
+                            <button class="subject-float-card git-card" data-subject-id="git">
+                                <div class="card-icon"></div>
+                                <span class="card-text">Git & Version<br>Control</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- VIEW: SUBJECT UNIVERSE (Often paired with others, mapped as distinct view) -->
+            <section id="view-universe" class="view" aria-labelledby="universe-heading">
+                <h2 id="universe-heading" class="section-title">Subject Universe</h2>
+                <div class="universe-container" id="subject-universe-graph">
+                    <!-- SVG for drawing connections, populated by JS -->
+                    <svg class="universe-connections" id="universe-lines" aria-hidden="true"></svg>
+                    
+                    <!-- Nodes (Dynamically controlled, structured statically for initial load) -->
+                    <button class="universe-node" data-node-id="data-structures" style="--x: 50%; --y: 10%;">Data Structures</button>
+                    <button class="universe-node" data-node-id="algorithms" style="--x: 30%; --y: 25%;">Algorithms</button>
+                    <button class="universe-node" data-node-id="verilog" style="--x: 70%; --y: 30%;">Verilog</button>
+                    <button class="universe-node" data-node-id="digital-logic" style="--x: 20%; --y: 50%;">Digital Logic</button>
+                    <button class="universe-node" data-node-id="cpp" style="--x: 50%; --y: 85%;">C++</button>
+                    <button class="universe-node" data-node-id="c" style="--x: 80%; --y: 70%;">C</button>
+                    <button class="universe-node" data-node-id="git" style="--x: 80%; --y: 50%;">Git</button>
+                    <button class="universe-node" data-node-id="git-2" style="--x: 30%; --y: 75%;">Git</button>
+                    <button class="universe-node" data-node-id="cs" style="--x: 90%; --y: 40%;">C's</button>
+                </div>
+            </section>
+
+            <!-- VIEW: VIVA ARENA -->
+            <section id="view-viva" class="view" aria-labelledby="viva-heading">
+                <div class="view-header">
+                    <h2 id="viva-heading" class="section-title">Viva Arena</h2>
+                    <div class="viva-controls">
+                        <button type="button" class="btn btn-secondary btn-sm">Double</button>
+                    </div>
+                </div>
+
+                <div class="viva-layout">
+                    <!-- Question Area -->
+                    <div class="viva-question-area">
+                        <article class="glass-card question-card">
+                            <header class="card-header">
+                                <h3 class="card-title">Answers</h3>
+                                <button type="button" class="icon-btn kebab-menu" aria-label="Question options">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/><circle cx="5" cy="12" r="1"/></svg>
+                                </button>
+                            </header>
+                            <div class="question-content">
+                                <h4 class="question-text">Explain the difference between a struct and a class in C++?</h4>
+                            </div>
+                        </article>
+
+                        <!-- Options Grid (Hooks for JS) -->
+                        <div class="viva-options-grid" id="viva-options-container" role="group" aria-labelledby="viva-heading">
+                            <button class="viva-option-btn" data-option-id="opt-1">
+                                <span class="option-text">Explain the difference between a struct and a class.</span>
+                                <svg class="option-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                            </button>
+                            <button class="viva-option-btn" data-option-id="opt-2">
+                                <span class="option-text">Explain the difference between a struct and a class.</span>
+                                <svg class="option-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                            </button>
+                            <button class="viva-option-btn" data-option-id="opt-3">
+                                <span class="option-text">Explain the difference between a struct and a class?</span>
+                                <svg class="option-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                            </button>
+                            <button class="viva-option-btn" data-option-id="opt-4">
+                                <span class="option-text">Explain the difference between a struct and a class?</span>
+                                <svg class="option-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                            </button>
+                        </div>
+
+                        <!-- Progress Tracker -->
+                        <div class="viva-progress-tracker">
+                            <div class="tracker-header">
+                                <span class="tracker-title">Progress Tracker</span>
+                                <button type="button" class="btn btn-text btn-sm">Notes</button>
+                            </div>
+                            <div class="tracker-timeline" id="viva-timeline">
+                                <div class="timeline-line"></div>
+                                <div class="timeline-milestone active" data-milestone="1">
+                                    <span class="milestone-dot"></span>
+                                    <span class="milestone-label">Milestone 1</span>
+                                </div>
+                                <div class="timeline-milestone" data-milestone="2">
+                                    <span class="milestone-dot"></span>
+                                    <span class="milestone-label">Milestone 2</span>
+                                </div>
+                                <div class="timeline-milestone" data-milestone="3">
+                                    <span class="milestone-dot"></span>
+                                    <span class="milestone-label">Milestone 3</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Side Universe View (Embedded) -->
+                    <div class="viva-side-panel">
+                         <h3 class="panel-title">Subject Universe</h3>
+                         <div class="universe-mini-container" id="viva-universe-graph">
+                             <!-- Compact version of the graph for the side panel -->
+                             <svg class="universe-connections" id="viva-universe-lines" aria-hidden="true"></svg>
+                             <!-- Nodes would be dynamically injected here or mirrored -->
+                             <div class="placeholder-text">Graph Visualizer</div>
+                         </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- VIEW: REVISION SPACE -->
+            <section id="view-revision" class="view" aria-labelledby="revision-heading">
+                <header class="view-header">
+                    <div class="search-bar-container">
+                        <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                        <input type="search" id="revision-search-input" class="search-input" placeholder="Search" aria-label="Search revision concepts">
+                    </div>
+                    <button type="button" class="icon-btn filter-btn" aria-label="Filter options">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg>
+                    </button>
+                </header>
+
+                <div class="revision-content">
+                    <div class="section-heading-group">
+                        <h2 id="revision-heading" class="section-title">Revision Space: Essential Concepts</h2>
+                        <p class="section-subtitle">Categorized, objective essential summary</p>
+                    </div>
+
+                    <!-- Dynamic Grid for Concept Cards -->
+                    <div class="concept-cards-grid" id="revision-cards-container">
+                        
+                        <!-- Template / Initial State Card 1 -->
+                        <article class="glass-card concept-card" data-concept-id="pointers">
+                            <header class="card-header">
+                                <h3 class="card-title">Pointers</h3>
+                                <button type="button" class="icon-btn kebab-menu" aria-label="Pointers options">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/><circle cx="5" cy="12" r="1"/></svg>
+                                </button>
+                            </header>
+                            <p class="card-description">Pointers are raw objects in computing locate memories and contain font. Supportive intensity mathematical to common documents.</p>
+                            
+                            <div class="card-actions">
+                                <button type="button" class="action-row">
+                                    <span>Notes</span>
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
+                                </button>
+                                <button type="button" class="action-row">
+                                    <span>Expandable Notes</span>
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
+                                </button>
+                                <button type="button" class="action-row">
+                                    <span>Common Mistakes</span>
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
+                                </button>
+                            </div>
+
+                            <div class="card-footer">
+                                <div class="card-progress">
+                                    <span class="progress-label">Progress</span>
+                                    <span class="progress-numbers" id="progress-pointers">10 / 30</span>
+                                </div>
+                                <button type="button" class="btn btn-primary btn-block test-yourself-btn" data-action="test-concept">Test Yourself</button>
+                            </div>
+                        </article>
+
+                        <!-- Template / Initial State Card 2 -->
+                        <article class="glass-card concept-card" data-concept-id="memory-management">
+                            <header class="card-header">
+                                <h3 class="card-title">Memory Management</h3>
+                                <button type="button" class="icon-btn kebab-menu" aria-label="Memory Management options">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/><circle cx="5" cy="12" r="1"/></svg>
+                                </button>
+                            </header>
+                            <p class="card-description">Memory Management is a core aspect of software development, involving allocation, usage, and release of memory resources.</p>
+                            
+                            <div class="card-actions">
+                                <button type="button" class="action-row">
+                                    <span>Notes</span>
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
+                                </button>
+                                <button type="button" class="action-row">
+                                    <span>Expandable Notes</span>
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
+                                </button>
+                                <button type="button" class="action-row">
+                                    <span>Common Mistakes</span>
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
+                                </button>
+                            </div>
+
+                            <div class="card-footer">
+                                <div class="card-progress">
+                                    <span class="progress-label">Progress</span>
+                                    <span class="progress-numbers" id="progress-memory">30 / 30</span>
+                                </div>
+                                <button type="button" class="btn btn-primary btn-block test-yourself-btn" data-action="test-concept">Test Yourself</button>
+                            </div>
+                        </article>
+
+                        <!-- Template / Initial State Card 3 -->
+                        <article class="glass-card concept-card" data-concept-id="karnaugh-maps">
+                            <header class="card-header">
+                                <h3 class="card-title">Karnaugh Maps</h3>
+                                <button type="button" class="icon-btn kebab-menu" aria-label="Karnaugh Maps options">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/><circle cx="5" cy="12" r="1"/></svg>
+                                </button>
+                            </header>
+                            <p class="card-description">Karnaugh Maps are visual tools used to simplify boolean algebra expressions, crucial for digital logic design.</p>
+                            
+                            <div class="card-actions">
+                                <button type="button" class="action-row">
+                                    <span>Notes</span>
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
+                                </button>
+                                <button type="button" class="action-row">
+                                    <span>Expandable Notes</span>
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
+                                </button>
+                                <button type="button" class="action-row">
+                                    <span>Common Mistakes</span>
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
+                                </button>
+                            </div>
+
+                            <div class="card-footer">
+                                <div class="card-progress">
+                                    <span class="progress-label">Progress</span>
+                                    <span class="progress-numbers" id="progress-kmap">10 / 30</span>
+                                </div>
+                                <button type="button" class="btn btn-primary btn-block test-yourself-btn" data-action="test-concept">Test Yourself</button>
+                            </div>
+                        </article>
+
+                    </div>
+                </div>
+            </section>
+
+            <!-- Placeholders for other required views -->
+            <section id="view-share" class="view" aria-labelledby="share-heading">
+                <h2 id="share-heading" class="section-title">Share</h2>
+                <div class="content-placeholder">Share interface goes here.</div>
+            </section>
+
+            <section id="view-lab" class="view" aria-labelledby="lab-heading">
+                <h2 id="lab-heading" class="section-title">Visual Lab / Code Studio</h2>
+                <div class="content-placeholder">Interactive code and visual learning environment goes here.</div>
+            </section>
+
+            <section id="view-search" class="view" aria-labelledby="search-heading">
+                <h2 id="search-heading" class="section-title">Global Search</h2>
+                <div class="content-placeholder">Search results go here.</div>
+            </section>
+
+        </main>
+
+        <!-- ================= MOBILE BOTTOM NAVIGATION ================= -->
+        <!-- Only visible on smaller screens, controlled via CSS -->
+        <nav class="mobile-nav" id="mobile-navigation" aria-label="Mobile Navigation">
+            <ul role="list">
+                <li>
+                    <a href="#home" class="nav-link active" data-target="view-home">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+                        <span>Home</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#revision" class="nav-link" data-target="view-revision">
+                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+                        <span>Revision</span>
+                    </a>
+                </li>
+                <li>
+                    <button type="button" class="nav-link" id="mobile-search-trigger" aria-label="Search">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                        <span>Search</span>
+                    </button>
+                </li>
+                <li>
+                    <a href="#profile" class="nav-link" data-target="view-profile">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                        <span>Profile</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+    </div>
+</body>
+</html>
